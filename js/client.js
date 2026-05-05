@@ -18,12 +18,16 @@ function createdFromId(id) {
   return new Date(parseInt(id.substring(0, 8), 16) * 1000);
 }
 
+console.log('[card-age] connector loaded, TrelloPowerUp =', typeof TrelloPowerUp);
+
 TrelloPowerUp.initialize({
   'card-badges': function (t) {
+    console.log('[card-age] card-badges callback invoked');
     return t.card('id', 'dateLastActivity').then(function (card) {
+      console.log('[card-age] card data:', card);
       const ageDays = daysSince(createdFromId(card.id));
       const activeDays = daysSince(new Date(card.dateLastActivity));
-      return [
+      const badges = [
         {
           text: ageDays + 'd',
           color: ageColor(ageDays),
@@ -35,6 +39,8 @@ TrelloPowerUp.initialize({
           refresh: REFRESH_SECONDS,
         },
       ];
+      console.log('[card-age] returning badges:', badges);
+      return badges;
     });
   },
 });
