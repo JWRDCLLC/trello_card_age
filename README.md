@@ -16,7 +16,7 @@ No backend, no tracking — pure static client code.
 
 1. Visit <https://trello.com/power-ups/admin> and pick the workspace you want to install it in.
 2. **New Power-Up** → fill in:
-   - **Iframe Connector URL**: `https://jwrobbs.github.io/trello_card_age/`
+   - **Iframe Connector URL**: `https://jwrdcllc.github.io/trello_card_age/`
    - **Workspace**: your workspace
 3. On the new Power-Up's **Capabilities** tab, enable **card-badges** and save.
 4. On any board in that workspace, **Power-Ups → Add Power-Up** → find this one in the **Custom** section.
